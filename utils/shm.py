@@ -4,7 +4,7 @@ from multiprocessing.shared_memory import SharedMemory
 
 class SHM:
     smm = SharedMemoryManager()
-    mmap = {}
+    mmap: dict[str, SharedMemory] = {}
     is_start = False
 
     @classmethod
