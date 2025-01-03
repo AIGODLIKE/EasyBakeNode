@@ -15,6 +15,7 @@ class AIBakeTree(bpy.types.Panel):
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = "AI"
+    bl_order = 99
 
     def draw(self, context: Context):
         layout = self.layout
