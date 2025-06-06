@@ -256,7 +256,8 @@ class Bake(NodeBase):
             dst = mesh_pair[0]
             img_name = f"{dst}_{cat}_{bake_pass}"
             if img_name not in bpy.data.images:
-                bpy.data.images.new(name=img_name, width=res[0], height=res[1], alpha=True)
+                img = bpy.data.images.new(name=img_name, width=res[0], height=res[1], alpha=True)
+                img_name = img.name # avoid name changed
             img: bpy.types.Image = bpy.data.images[img_name]
             img.scale(*res)
             img.pixels.foreach_set(pixels.ravel())
